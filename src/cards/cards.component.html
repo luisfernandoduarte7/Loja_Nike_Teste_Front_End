@@ -1,0 +1,23 @@
+<div class="loja-list">
+    <h1>Popular Products</h1>
+    <p>The insole are confortable so you can wear thern everday</p>
+    <ul>
+        <li *ngFor="let loja of loja">
+
+            <div class="bg">
+                <img src="{{loja.img}}" alt="" class="tenis">
+
+                <div class="coracao">
+                    ❤️
+
+                </div>
+            </div>
+            <h3 class="name">{{ loja.nome }}</h3>
+            <p class="descricao">{{ loja.descricao}}</p>
+            <div class="canto">
+                <p class="preco">{{ loja.preco| currency: 'BRL' }}</p>
+                <button (click)="changeColor()" [ngStyle]="{'background-color': buttonColor}">Add to Cart</button>
+            </div>
+        </li>
+    </ul>
+</div>
